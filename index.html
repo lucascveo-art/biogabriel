@@ -52,12 +52,7 @@
             margin-bottom: 1.5rem; /* mb-6 */
         }
 
-        /* * Efeito de Empilhamento (Stacking):
-         * Aumentamos o 'top' e o 'z-index' de cada card.
-         * O z-index maior garante que o card mais abaixo fique por cima.
-         * O 'top' maior faz com que ele pare de rolar um pouco depois,
-         * criando a sobreposição.
-        */
+        /* Efeito de Empilhamento (Stacking) */
         .sticky-card:nth-of-type(1) {
             top: 20px; /* 4px barra + 16px padding */
             z-index: 1;
@@ -79,27 +74,63 @@
         @keyframes float-glow {
           0%, 100% {
             transform: translateY(0);
-            /* Sombra/brilho suave */
             filter: drop-shadow(0 0 4px rgba(52, 211, 153, 0.5));
           }
           50% {
-            transform: translateY(-8px); /* Move 8px para cima */
-            /* Brilho mais intenso */
+            transform: translateY(-8px);
             filter: drop-shadow(0 0 12px rgba(52, 211, 153, 1));
           }
         }
 
         .animate-float-glow {
-          /* Duração de 3s, suave (ease-in-out), e repete (infinite) */
           animation: float-glow 3s ease-in-out infinite;
         }
+
+        /* --- Estilos das Partículas --- */
+        #particle-container {
+            position: absolute;
+            inset: 0;
+            z-index: 1; /* Atrás do conteúdo, mas acima do fundo */
+            overflow: hidden;
+            pointer-events: none; /* Não bloquear cliques */
+        }
+
+        .particle {
+            position: absolute;
+            bottom: -20px; /* Começa fora da tela */
+            border-radius: 50%;
+            opacity: 0;
+            /* Animação: nome, duração, tipo, repetição */
+            animation: animate-particles linear infinite;
+        }
+
+        @keyframes animate-particles {
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+            10% {
+                /* Aparece suavemente */
+                opacity: 0.7;
+            }
+            90% {
+                /* Mantém-se visível */
+                opacity: 0.7;
+            }
+            100% {
+                /* Move 100vh (altura da tela) para cima e desaparece */
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
+        /* --- Fim dos Estilos das Partículas --- */
+
     </style>
 </head>
 <body class="antiasa">
 
     <!-- Cabeçalho Fixo (Hero Section) -->
-    <!-- overflow-hidden removido para não cortar a animação de brilho (glow) -->
-    <header class="relative h-screen flex flex-col justify-center items-center text-center p-4">
+    <header class="relative h-screen flex flex-col justify-center items-center text-center p-4 overflow-hidden">
         <!-- Imagem de Fundo Placeholder (1920x1068) -->
         <div class="absolute inset-0 z-0">
             <img src="https://placehold.co/1920x1068/0a0a0a/34D399?text=Gabriel+Pela+Europa" 
@@ -110,6 +141,9 @@
             <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
         </div>
         
+        <!-- Contêiner das Partículas (Verde, Branco, Vermelho) -->
+        <div id="particle-container"></div>
+
         <!-- Conteúdo do Header (Hero) -->
         <div class="relative z-10">
             <h1 class="text-5xl md:text-7xl font-bold text-white tracking-wider leading-tight">
@@ -127,12 +161,12 @@
     </header>
 
     <!-- Barra de Progresso Fixa -->
-    <div class="progress-container" style="top: 0px;"> <!-- Posição da barra ajustada para o topo -->
+    <div class="progress-container" style="top: 0px;">
         <div id="progressBar" class="progress-bar"></div>
     </div>
 
     <!-- Contêiner Principal de Rolagem -->
-    <main id="scrollContainer" class="relative"> <!-- mt-40 removido -->
+    <main id="scrollContainer" class="relative">
         <div class="container mx-auto px-4 max-w-3xl">
 
             <!-- Card 1: Design -->
@@ -236,78 +270,81 @@
         <p>&copy; 2025 Gabriel Pela Europa. Tutti i diritti riservati.</p>
     </footer>
 
-    <!-- Script para a Barra de Progresso -->
+    <!-- Script para a Barra de Progresso e Partículas -->
     <script>
         // Aguarda o carregamento do DOM
         document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- Lógica da Barra de Progresso ---
             const progressBar = document.getElementById('progressBar');
             const scrollContainer = document.getElementById('scrollContainer');
             const heroSection = document.querySelector('header');
             const progressBarContainer = document.querySelector('.progress-container');
 
-            // FIX: Adiciona uma verificação para garantir que o container da barra existe
             if (progressBarContainer) {
-                // Torna a barra de progresso invisível inicialmente
                 progressBarContainer.style.opacity = '0';
                 progressBarContainer.style.transition = 'opacity 0.3s ease';
             }
 
-            // Função para atualizar a barra de progresso
             const updateProgressBar = () => {
-                // FIX: Adiciona verificações de nulidade para todos os elementos antes de usar 'offsetHeight' ou 'offsetTop'
                 if (!scrollContainer || !heroSection || !progressBarContainer || !progressBar) {
-                    // Se algum elemento não for encontrado, não executa a lógica.
                     return;
                 }
-
                 const scrollTop = window.scrollY;
-                
-                // containerTop: A posição inicial do <main> (abaixo do hero)
                 const containerTop = scrollContainer.offsetTop;
-                
-                // containerHeight: A altura total do <main> (onde os cards estão)
                 const containerHeight = scrollContainer.offsetHeight;
-                
-                // windowHeight: A altura visível da janela
                 const windowHeight = window.innerHeight;
-                
-                // Altura da seção Hero
                 const heroHeight = heroSection.offsetHeight;
 
-                // Mostra a barra de progresso apenas quando rolamos para além da seção hero
                 if (scrollTop > heroHeight - (progressBarContainer.offsetHeight * 2)) {
                     progressBarContainer.style.opacity = '1';
                 } else {
                     progressBarContainer.style.opacity = '0';
                 }
-
-                // O ponto inicial da rolagem que queremos medir (quando o topo do <main> chega ao topo da janela)
                 const scrollStart = containerTop;
-                
-                // O ponto final da rolagem (quando o fundo do <main> chega ao fundo da janela)
                 const scrollEnd = containerTop + containerHeight - windowHeight;
-
-                // A distância total que podemos rolar *dentro* do <main>
                 const scrollRange = scrollEnd - scrollStart;
-                
-                // O quanto já rolamos *dentro* desse range
                 const currentScroll = scrollTop - scrollStart;
-
-                // Calcula a porcentagem de progresso
                 let progress = currentScroll / scrollRange;
-
-                // Garante que o progresso fique entre 0 (0%) e 1 (100%)
                 progress = Math.min(1, Math.max(0, progress));
-
-                // Aplica o progresso à barra usando CSS transform
                 progressBar.style.transform = `scaleX(${progress})`;
             };
 
-            // Adiciona o listener de scroll na janela
             window.addEventListener('scroll', updateProgressBar);
-            
-            // Chama a função uma vez no início para garantir o estado correto
             updateProgressBar();
+
+            // --- Lógica das Partículas ---
+            const particleContainer = document.getElementById('particle-container');
+            
+            // Cores da bandeira italiana
+            const colors = ['#008C45', '#F4F5F0', '#CD212A']; 
+            const numParticles = 50;
+
+            if (particleContainer) {
+                for (let i = 0; i < numParticles; i++) {
+                    let particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    
+                    // Tamanho aleatório (1px a 3px)
+                    const size = Math.random() * 2 + 1; 
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
+                    
+                    // Cor aleatória (verde, branco, vermelho)
+                    particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    
+                    // Posição horizontal aleatória
+                    particle.style.left = `${Math.random() * 100}%`;
+                    
+                    // Duração da animação aleatória (10s a 20s)
+                    particle.style.animationDuration = `${Math.random() * 10 + 10}s`;
+                    
+                    // Atraso aleatório (0s a 10s)
+                    particle.style.animationDelay = `${Math.random() * 10}s`;
+
+                    particleContainer.appendChild(particle);
+                }
+            }
         });
     </script>
 
