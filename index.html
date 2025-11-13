@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabriel Pela Europa - Portale</title>
-    <!-- Carregando Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Carregando Google Fonts (Inter) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Carregando Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carregando Google Fonts (Inter) --><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
     
@@ -129,56 +127,45 @@
 </head>
 <body class="antiasa">
 
-    <!-- Cabeçalho Fixo (Hero Section) -->
-    <header class="relative h-screen flex flex-col justify-center items-center text-center p-4 overflow-hidden">
-        <!-- Imagem de Fundo Placeholder (1920x1068) -->
-        <div class="absolute inset-0 z-0">
-            <img src="https://placehold.co/1920x1068/0a0a0a/34D399?text=Gabriel+Pela+Europa" 
-                 alt="Placeholder Imagem de Fundo Hero"
+    <!-- Cabeçalho Fixo (Hero Section) --><header class="relative h-screen flex flex-col justify-center items-center text-center p-4 overflow-hidden">
+        <!-- Imagem de Fundo Placeholder (1920x1068) --><div class="absolute inset-0 z-0">
+            <img src="https://i.imgur.com/18Wga9B.png" 
+                 alt="Imagem de Fundo Hero"
                  class="w-full h-full object-cover opacity-30"
                  onerror="this.src='https://placehold.co/1920x1068/0a0a0a/34D399?text=Background+Image'">
-            <!-- Overlay escuro -->
-            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+            <!-- Overlay escuro --><div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
         </div>
         
-        <!-- Contêiner das Partículas (Verde, Branco, Vermelho) -->
-        <div id="particle-container"></div>
+        <!-- Contêiner das Partículas (Verde, Branco, Vermelho) --><div id="particle-container"></div>
 
-        <!-- Conteúdo do Header (Hero) -->
-        <div class="relative z-10">
+        <!-- Conteúdo do Header (Hero) --><div class="relative z-10">
             <h1 class="text-5xl md:text-7xl font-bold text-white tracking-wider leading-tight">
                 <span class="text-emerald-400">GABRIEL</span> <span class="text-white">PELA</span>
             </h1>
             <h2 class="text-5xl md:text-7xl font-bold text-red-600 tracking-wider">
                 EUROPA
             </h2>
-            <!-- Animação movida apenas para o ícone -->
-            <div class="mt-8 flex items-center justify-center text-gray-300">
+            <!-- Animação movida apenas para o ícone --><div class="mt-8 flex items-center justify-center text-gray-300">
                 <svg aria-hidden="true" class="w-5 h-5 mr-2 text-emerald-400 animate-float-glow" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>
                 <span>Arraste para baixo</span>
             </div>
         </div>
     </header>
 
-    <!-- Barra de Progresso Fixa -->
-    <div class="progress-container" style="top: 0px;">
+    <!-- Barra de Progresso Fixa --><div class="progress-container" style="top: 0px;">
         <div id="progressBar" class="progress-bar"></div>
     </div>
 
-    <!-- Contêiner Principal de Rolagem -->
-    <main id="scrollContainer" class="relative">
+    <!-- Contêiner Principal de Rolagem --><main id="scrollContainer" class="relative">
         <div class="container mx-auto px-4 max-w-3xl">
 
-            <!-- Card 1: Design -->
-            <section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center">
+            <!-- Card 1: Design --><section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center">
                 <div class="w-16 h-16 bg-emerald-400 rounded-full flex items-center justify-center mb-4">
-                    <!-- Ícone SVG para Design -->
-                    <svg class="w-8 h-8 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <!-- Ícone SVG para Design --><svg class="w-8 h-8 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.4-c.135 0-.268-.017-.4-.052a3 3 0 00-1.936.5A2.25 2.25 0 006 21.75c.636 0 1.223-.242 1.659-.641a2.25 2.25 0 012.87-2.4 3 3 0 00.16-5.588zM15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z" />
                     </svg>
                 </div>
-                <!-- Imagem Placeholder Adicionada -->
-                <img src="https://placehold.co/776x530/1f2937/f3f4f6?text=Immagine+Design+1" 
+                <!-- Imagem Placeholder Adicionada --><img src="https://placehold.co/776x530/1f2937/f3f4f6?text=Immagine+Design+1" 
                      alt="Placeholder Design" 
                      class="w-full h-auto rounded-lg mb-4 object-cover"
                      onerror="this.src='https://placehold.co/776x530/1f2937/f3f4f6?text=Immagine+non+disponibile'">
@@ -192,17 +179,14 @@
                 </a>
             </section>
 
-            <!-- Card 2: Estratégia -->
-            <section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center">
+            <!-- Card 2: Estratégia --><section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center">
                 <div class="w-16 h-16 bg-emerald-400 rounded-full flex items-center justify-center mb-4">
-                    <!-- Ícone SVG para Estratégia -->
-                    <svg class="w-8 h-8 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <!-- Ícone SVG para Estratégia --><svg class="w-8 h-8 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
                     </svg>
                 </div>
-                <!-- Imagem Placeholder Adicionada -->
-                <img src="https://placehold.co/776x530/1f2937/f3f4f6?text=Immagine+Strategia+2" 
+                <!-- Imagem Placeholder Adicionada --><img src="https://placehold.co/776x530/1f2937/f3f4f6?text=Immagine+Strategia+2" 
                      alt="Placeholder Strategia" 
                      class="w-full h-auto rounded-lg mb-4 object-cover"
                      onerror="this.src='https://placehold.co/776x530/1f2937/f3f4f6?text=Immagine+non+disponibile'">
@@ -216,16 +200,13 @@
                 </a>
             </section>
 
-            <!-- Card 3: Branding -->
-            <section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center">
+            <!-- Card 3: Branding --><section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center">
                 <div class="w-16 h-16 bg-emerald-400 rounded-full flex items-center justify-center mb-4">
-                    <!-- Ícone SVG para Branding -->
-                    <svg class="w-8 h-8 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <!-- Ícone SVG para Branding --><svg class="w-8 h-8 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423L16.5 15.75l.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
                     </svg>
                 </div>
-                <!-- Imagem Placeholder Adicionada -->
-                <img src="https://placehold.co/776x530/1f2937/f3f4f6?text=Immagine+Branding+3" 
+                <!-- Imagem Placeholder Adicionada --><img src="https://placehold.co/776x530/1f2937/f3f4f6?text=Immagine+Branding+3" 
                      alt="Placeholder Branding" 
                      class="w-full h-auto rounded-lg mb-4 object-cover"
                      onerror="this.src='https://placehold.co/776x530/1f2937/f3f4f6?text=Immagine+non+disponibile'">
@@ -239,16 +220,13 @@
                 </a>
             </section>
 
-            <!-- Card 4: Contato -->
-            <section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center">
+            <!-- Card 4: Contato --><section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center">
                 <div class="w-16 h-16 bg-emerald-400 rounded-full flex items-center justify-center mb-4">
-                    <!-- Ícone SVG para Contato -->
-                    <svg class="w-8 h-8 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <!-- Ícone SVG para Contato --><svg class="w-8 h-8 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                     </svg>
                 </div>
-                <!-- Imagem Placeholder Adicionada -->
-                <img src="https://placehold.co/776x530/1f2937/f3f4f6?text=Immagine+Contato+4" 
+                <!-- Imagem Placeholder Adicionada --><img src="https://placehold.co/776x530/1f2937/f3f4f6?text=Immagine+Contato+4" 
                      alt="Placeholder Contato" 
                      class="w-full h-auto rounded-lg mb-4 object-cover"
                      onerror="this.src='https://placehold.co/776x530/1f2937/f3f4f6?text=Immagine+non+disponibile'">
@@ -265,13 +243,11 @@
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="py-12 mt-16 text-center text-gray-500">
+    <!-- Footer --><footer class="py-12 mt-16 text-center text-gray-500">
         <p>&copy; 2025 Gabriel Pela Europa. Tutti i diritti riservati.</p>
     </footer>
 
-    <!-- Script para a Barra de Progresso e Partículas -->
-    <script>
+    <!-- Script para a Barra de Progresso e Partículas --><script>
         // Aguarda o carregamento do DOM
         document.addEventListener('DOMContentLoaded', () => {
             
