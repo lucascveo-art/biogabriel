@@ -236,13 +236,13 @@
 <body class="antiasa">
 
     <!-- Seção Hero (Cabeçalho) -->
-    <header id="heroSection" class="relative h-screen flex flex-col justify-center items-center text-center p-4 overflow-hidden">
+    <header id="heroSection" class="relative h-screen flex flex-col justify-end items-center text-center p-4 pb-20 overflow-hidden">
         
         <!-- Imagem de Fundo -->
         <div class="absolute inset-0 z-0">
             <img src="https://i.imgur.com/ka1tTeB.jpeg" 
                  alt="Gabriel Pela Europa Background"
-                 class="w-full h-full object-cover opacity-30"
+                 class="w-full h-full object-cover opacity-50"
                  onerror="this.src='https://placehold.co/1920x1068/0a0a0a/34D399?text=Carregando+Imagem...'">
             
             <!-- Overlay escuro para legibilidade -->
@@ -395,12 +395,21 @@
                     progressBarContainer.style.opacity = '0';
                 }
 
+                // Verifica se a altura do container é válida
+                if (containerHeight <= 0 || windowHeight <= 0) {
+                    return;
+                }
+
                 const scrollStart = containerTop;
+                // Ajusta o fim do scroll para o fim do último card
                 const scrollEnd = containerTop + containerHeight - windowHeight;
                 const scrollRange = scrollEnd - scrollStart;
                 
                 if (scrollRange <= 0) {
-                     progressBar.style.transform = `scaleX(1)`;
+                     progressBar.style.transform = `scaleX(0)`; // Começa em 0 se não houver scroll
+                     if (scrollTop > scrollStart) {
+                         progressBar.style.transform = `scaleX(1)`; // Completa se já passou
+                     }
                      return;
                 }
 
@@ -413,11 +422,13 @@
             };
 
             window.addEventListener('scroll', updateProgressBar);
+            // Chama uma vez no carregamento para garantir o estado inicial correto
             updateProgressBar();
 
             // --- Lógica das Partículas ---
             const particleContainer = document.getElementById('particle-container');
             
+            // Cores da Itália
             const colors = ['#008C45', '#F4F5F0', '#CD212A']; 
             const numParticles = 50;
 
