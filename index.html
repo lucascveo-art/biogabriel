@@ -14,12 +14,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     
     <style>
+        /* Animação Gradiente Interno (Cards) */
+        @keyframes animate-bg-pan {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Animação Sombra Italiana (NOVO) */
+        @keyframes italian-shadow-glow {
+          0%, 100% {
+            box-shadow: 0 0 25px 8px rgba(0, 140, 69, 0.6); /* Verde */
+          }
+          33% {
+            box-shadow: 0 0 25px 8px rgba(244, 245, 240, 0.6); /* Branco */
+          }
+          66% {
+            box-shadow: 0 0 25px 8px rgba(205, 33, 42, 0.6); /* Vermelho */
+          }
+        }
+
         /* Estilo base */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0a0a0a; /* Um preto um pouco mais suave */
             color: #f3f4f6;
             overscroll-behavior: none;
+            background-color: #0a0a0a; /* Fundo preto estático */
         }
 
         /* Contêiner da Barra de Progresso (Invisível no início) */
@@ -45,59 +65,29 @@
             transition: transform 0.1s linear;
         }
 
-        /* Animação Gradiente Interno (NOVO) */
-        @keyframes animate-bg-pan {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Estilo dos Cards "Sticky" */
+        /* Estilo dos Cards (NÃO MAIS STICKY) */
         .sticky-card {
-            position: sticky;
-            min-height: 400px; /* Altura mínima para o efeito funcionar */
+            min-height: 400px; 
             border-radius: 1.5rem; /* rounded-3xl */
-            border: 1px solid #374151; /* border-gray-700 */
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.2), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            border: 1px solid #4b5563; /* Borda cinza um pouco mais clara */
             margin-bottom: 1.5rem; /* mb-6 */
-            position: relative; /* Necessário para z-index do pseudo-elemento */
-            overflow: hidden; /* Para conter o pseudo-elemento */
-            background-color: #111827; /* Fundo escuro padrão */
+            position: relative; 
+            overflow: hidden; 
+            background-color: #F4F5F0; /* FUNDO MAIS CLARO (Branco Italiano) */
+            animation: italian-shadow-glow 4s ease-in-out infinite; /* Sombra Animada */
         }
 
-        /* Pseudo-elemento para a animação de fundo (NOVO) */
+        /* Pseudo-elemento para a animação de fundo */
         .sticky-card::before {
             content: '';
             position: absolute;
             inset: 0;
-            z-index: 1; /* Fica atrás do conteúdo (z-10) */
+            z-index: 1; 
             background: linear-gradient(90deg, #008C45, #F4F5F0, #CD212A, #008C45);
             background-size: 300% 300%;
             animation: animate-bg-pan 6s ease-in-out infinite;
-            opacity: 0.20; /* Opacidade suave */
-            border-radius: inherit; /* Garante cantos arredondados */
-        }
-
-        /* Efeito de Empilhamento (Stacking) - Atualizado para 5 cards */
-        .sticky-card:nth-of-type(1) {
-            top: 20px; 
-            z-index: 1;
-        }
-        .sticky-card:nth-of-type(2) {
-            top: 40px; 
-            z-index: 2;
-        }
-        .sticky-card:nth-of-type(3) {
-            top: 60px; 
-            z-index: 3;
-        }
-        .sticky-card:nth-of-type(4) {
-            top: 80px; 
-            z-index: 4;
-        }
-        .sticky-card:nth-of-type(5) {
-            top: 100px; 
-            z-index: 5;
+            opacity: 0.20; /* Opacidade suave sobre o branco */
+            border-radius: inherit; 
         }
         
         /* Animação de flutuar e brilhar (ícone check) */
@@ -316,11 +306,11 @@
     <main id="scrollContainer" class="relative" style="padding-top: 16px;"> <!-- Padding para não colar na barra -->
         <div class="container mx-auto px-4 max-w-3xl">
 
-            <!-- Card 1: Cidadania Italiana (FUNDO VERDE - Agora Fundo Animado) -->
+            <!-- Card 1: Cidadania Italiana -->
             <section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center">
-                <div class="relative z-10 w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4"> <!-- Fundo do ícone semi-transparente -->
+                <div class="relative z-10 w-16 h-16 bg-gray-900/10 rounded-full flex items-center justify-center mb-4"> <!-- Fundo do ícone semi-transparente -->
                     <!-- Ícone Aperto de Mão (Pulsante) -->
-                    <svg class="w-8 h-8 text-white animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <svg class="w-8 h-8 text-gray-900 animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                     </svg>
                 </div>
@@ -330,8 +320,8 @@
                      class="relative z-10 w-full h-auto rounded-lg mb-4 object-cover"
                      onerror="this.src='https://placehold.co/776x530/1f2937/f3f4f6?text=Imagem+indisponível'">
                 
-                <h2 class="relative z-10 text-2xl md:text-3xl font-bold mb-3 text-white">A sua Cidadania Italiana</h2>
-                <p class="relative z-10 text-gray-200 mb-6 max-w-lg">
+                <h2 class="relative z-10 text-2xl md:text-3xl font-bold mb-3 text-gray-900">A sua Cidadania Italiana</h2>
+                <p class="relative z-10 text-gray-700 mb-6 max-w-lg">
                     Entre em contato com a empresa MINATTO COSTA - CIDADANIA ITALIANA
                 </p>
                 <!-- Container para os dois botões -->
@@ -355,11 +345,11 @@
                 </div>
             </section>
             
-            <!-- Card 2: Nutricionista (FUNDO VERMELHO - Agora Fundo Animado) -->
+            <!-- Card 2: Nutricionista -->
             <section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center">
-                <div class="relative z-10 w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4"> <!-- Fundo do ícone semi-transparente -->
+                <div class="relative z-10 w-16 h-16 bg-gray-900/10 rounded-full flex items-center justify-center mb-4"> <!-- Fundo do ícone semi-transparente -->
                     <!-- Ícone Nutrição (Pulsante) -->
-                    <svg class="w-8 h-8 text-white animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <svg class="w-8 h-8 text-gray-900 animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
                     </svg>
                 </div>
@@ -369,8 +359,8 @@
                      class="relative z-10 w-full h-auto rounded-lg mb-4 object-cover"
                      onerror="this.src='https://placehold.co/776x530/1f2937/f3f4f6?text=Imagem+indisponível'">
                 
-                <h2 class="relative z-10 text-2xl md:text-3xl font-bold mb-3 text-white">A sua Nutricionista Brasileira aqui na Itália</h2>
-                <p class="relative z-10 text-gray-200 mb-6 max-w-lg">
+                <h2 class="relative z-10 text-2xl md:text-3xl font-bold mb-3 text-gray-900">A sua Nutricionista Brasileira aqui na Itália</h2>
+                <p class="relative z-10 text-gray-700 mb-6 max-w-lg">
                     A vida na Itália não é só pasta. Encontre seu equilíbrio com uma nutricionista brasileira.
                 </p>
                 <!-- Container para os dois botões -->
@@ -394,11 +384,11 @@
                 </div>
             </section>
 
-            <!-- Card 3: Divulgue Sua Empresa (FUNDO VERDE - Agora Fundo Animado) -->
+            <!-- Card 3: Divulgue Sua Empresa -->
             <section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center">
-                <div class="relative z-10 w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4"> <!-- Fundo do ícone semi-transparente -->
+                <div class="relative z-10 w-16 h-16 bg-gray-900/10 rounded-full flex items-center justify-center mb-4"> <!-- Fundo do ícone semi-transparente -->
                     <!-- Ícone WhatsApp (Pulsante) -->
-                    <svg class="w-8 h-8 text-white animate-pulse-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="w-8 h-8 text-gray-900 animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12.0007 2.00001C6.48671 2.00001 2.00071 6.48601 2.00071 12.0000C2.00071 14.286 2.72371 16.417 4.00071 18.106L2.30871 22.0000L6.22371 20.3150C7.88471 21.2460 9.85171 21.7860 12.0007 21.7860C17.5147 21.7860 22.0007 17.3000 22.0007 12.0000C22.0007 6.48601 17.5147 2.00001 12.0007 2.00001ZM16.5187 15.604C16.3237 15.932 15.1117 16.514 14.8697 16.611C14.6287 16.711 14.4337 16.758 14.2387 16.661C14.0437 16.564 13.4357 16.37 12.7237 16.177C12.0127 15.984 11.2347 15.758 10.5907 15.115C9.94671 14.471 9.49771 13.689 9.30271 13.361C9.10871 13.033 9.02071 12.870 9.21571 12.542C9.41071 12.214 9.69971 11.834 9.91471 11.564C10.1107 11.294 10.2977 11.144 10.4357 10.875C10.5727 10.606 10.5197 10.470 10.4437 10.325C10.3677 10.180 9.77371 9.62001 9.50471 9.06001C9.23571 8.50001 9.02071 8.58301 8.82571 8.58301C8.63071 8.58301 8.36171 8.51301 8.09271 8.51301C7.82371 8.51301 7.37471 8.58301 7.00571 8.94901C6.63671 9.31501 5.68871 10.231 5.68871 12.134C5.68871 14.037 7.04271 15.890 7.23771 16.084C7.43271 16.279 8.78671 18.277 10.6897 19.167C12.5927 20.057 14.2387 19.829 14.8697 19.732C15.5007 19.636 16.6577 18.913 16.8987 18.271C17.1397 17.629 17.1397 17.087 17.0427 16.904C16.9457 16.721 16.7197 16.272 16.5187 15.604Z" />
                     </svg>
                 </div>
@@ -408,8 +398,8 @@
                      class="relative z-10 w-full h-auto rounded-lg mb-4 object-cover"
                      onerror="this.src='https://placehold.co/776x530/1f2937/f3f4f6?text=Imagem+indisponível'">
                 
-                <h2 class="relative z-10 text-2xl md:text-3xl font-bold mb-3 text-white">Divulgue Sua Empresa Comigo</h2>
-                <p class="relative z-10 text-gray-200 mb-6 max-w-lg"> <!-- Texto ATUALIZADO -->
+                <h2 class="relative z-10 text-2xl md:text-3xl font-bold mb-3 text-gray-900">Divulgue Sua Empresa Comigo</h2>
+                <p class="relative z-10 text-gray-700 mb-6 max-w-lg"> <!-- Texto ATUALIZADO -->
                     Alcance milhares de clientes para o seu negócio, que acompanham a minha vida na Itália. A sua marca pode ser a próxima estrela do meu conteúdo.
                 </p>
                 <a href="https://wa.me/393280662771?text=Ol%C3%A1%20Gabriel%2C%20vim%20pelo%20Instagram.%20Tenho%20uma%20empresa%20e%20busco%20seus%20servi%C3%A7os%20de%20divulga%C3%A7%C3%A3o%2C%20podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" class="relative z-10 btn-shine" style="--delay: 0.5s;">
@@ -417,11 +407,11 @@
                 </a>
             </section>
 
-            <!-- Card 4: YouTube (FUNDO VERMELHO - Agora Fundo Animado) -->
+            <!-- Card 4: YouTube -->
             <section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center">
-                <div class="relative z-10 w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4"> <!-- Fundo do ícone semi-transparente -->
+                <div class="relative z-10 w-16 h-16 bg-gray-900/10 rounded-full flex items-center justify-center mb-4"> <!-- Fundo do ícone semi-transparente -->
                     <!-- Ícone YouTube (Pulsante) -->
-                    <svg class="w-8 h-8 text-white animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <svg class="w-8 h-8 text-gray-900 animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
                     </svg>
@@ -432,8 +422,8 @@
                      class="relative z-10 w-full h-auto rounded-lg mb-4 object-cover"
                      onerror="this.src='https://placehold.co/776x530/1f2937/f3f4f6?text=Imagem+indisponível'">
                 
-                <h2 class="relative z-10 text-2xl md:text-3xl font-bold mb-3 text-white">Meu Canal do YouTube</h2>
-                <p class="relative z-10 text-gray-200 mb-6 max-w-lg">
+                <h2 class="relative z-10 text-2xl md:text-3xl font-bold mb-3 text-gray-900">Meu Canal do YouTube</h2>
+                <p class="relative z-10 text-gray-700 mb-6 max-w-lg">
                     Vlogs, dicas de viagem e as histórias mais loucas das minhas aventuras pela Europa. Acompanhe a jornada completa em vídeo.
                 </p>
                 <a href="https://www.youtube.com/@gabrielpelaeuropa" target="_blank" rel="noopener noreferrer" class="relative z-10 btn-shine" style="--delay: 0.6s;">
@@ -441,11 +431,11 @@
                 </a>
             </section>
             
-            <!-- Card 5: TikTok (FUNDO BRANCO - Agora Fundo Animado) -->
+            <!-- Card 5: TikTok -->
             <section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center">
-                <div class="relative z-10 w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4"> <!-- Fundo do ícone semi-transparente -->
+                <div class="relative z-10 w-16 h-16 bg-gray-900/10 rounded-full flex items-center justify-center mb-4"> <!-- Fundo do ícone semi-transparente -->
                     <!-- Ícone TikTok (Pulsante) -->
-                    <svg class="w-8 h-8 text-white animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512">
+                    <svg class="w-8 h-8 text-gray-900 animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512">
                         <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/>
                     </svg>
                 </div>
@@ -455,8 +445,8 @@
                      class="relative z-10 w-full h-auto rounded-lg mb-4 object-cover"
                      onerror="this.src='https://placehold.co/776x530/1f2937/f3f4f6?text=Imagem+indisponível'">
                 
-                <h2 class="relative z-10 text-2xl md:text-3xl font-bold mb-3 text-white">Meu TikTok</h2> <!-- Texto Escuro -->
-                <p class="relative z-10 text-gray-200 mb-6 max-w-lg"> <!-- Texto ATUALIZADO -->
+                <h2 class="relative z-10 text-2xl md:text-3xl font-bold mb-3 text-gray-900">Meu TikTok</h2>
+                <p class="relative z-10 text-gray-700 mb-6 max-w-lg"> <!-- Texto ATUALIZADO -->
                     Vídeos curtos, momentos imperdíveis e dicas rápidas para quem sonha em morar fora.
                 </p>
                 <a href="https://www.tiktok.com/@gabrielpelaeuropa" target="_blank" rel="noopener noreferrer" class="relative z-10 btn-shine" style="--delay: 0.7s;">
