@@ -55,17 +55,17 @@
             margin-bottom: 1.5rem; /* mb-6 */
         }
 
-        /* Efeito de Empilhamento (Stacking) */
+        /* Efeito de Empilhamento (Stacking) - Espaçamento aumentado */
         .sticky-card:nth-of-type(1) {
-            top: 20px; /* 4px barra + 16px padding */
+            top: 20px; 
             z-index: 1;
         }
         .sticky-card:nth-of-type(2) {
-            top: 30px; /* Aumenta o 'top' para empilhar */
+            top: 40px; /* Aumentado de 30px */
             z-index: 2;
         }
         .sticky-card:nth-of-type(3) {
-            top: 40px;
+            top: 60px; /* Aumentado de 40px */
             z-index: 3;
         }
         
@@ -99,7 +99,6 @@
             bottom: -20px; /* Começa fora da tela */
             border-radius: 50%;
             opacity: 0;
-            /* Animação: nome, duração, tipo, repetição */
             animation: animate-particles linear infinite;
         }
 
@@ -109,27 +108,24 @@
                 opacity: 0;
             }
             10% {
-                /* Aparece suavemente */
                 opacity: 0.7;
             }
             90% {
-                /* Mantém-se visível */
                 opacity: 0.7;
             }
             100% {
-                /* Move 100vh (altura da tela) para cima e desaparece */
                 transform: translateY(-100vh);
                 opacity: 0;
             }
         }
         /* --- Fim dos Estilos das Partículas --- */
 
-        /* Estilo do Título Hero com Cores e Brilho */
+        /* Estilo do Título Hero com Cores e Brilho (Adaptado para Mobile) */
         .hero-title {
             font-weight: 900; /* font-black */
             letter-spacing: -0.025em; /* tracking-tight */
             line-height: 1.1; /* leading-tight */
-            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra de texto geral */
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             font-size: 3rem; /* text-5xl (Mobile) */
         }
         
@@ -141,15 +137,15 @@
 
         .text-hero-green {
             color: #34D399; /* emerald-400 */
-            filter: drop-shadow(0 0 8px rgba(52, 211, 153, 0.7)); /* Brilho Verde */
+            filter: drop-shadow(0 0 8px rgba(52, 211, 153, 0.7));
         }
         .text-hero-white {
             color: #FFFFFF;
-            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7)); /* Brilho Branco */
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7));
         }
         .text-hero-red {
             color: #EF4444; /* red-500 */
-            filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.7)); /* Brilho Vermelho */
+            filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.7));
         }
 
         /* --- Estilo Botão Prateado (Adaptado para Mobile) --- */
@@ -157,15 +153,15 @@
             position: relative;
             overflow: hidden;
             display: inline-block;
-            background: linear-gradient(145deg, #e0e0e0, #c0c0c0); /* Gradiente Prateado */
-            color: #1f2937; /* Cor do texto escura */
+            background: linear-gradient(145deg, #e0e0e0, #c0c0c0);
+            color: #1f2937;
             font-weight: 700; /* font-bold */
             border-radius: 9999px; /* rounded-full */
             padding: 0.85rem 2rem; /* Tamanho mobile (py-3.5 px-8) */
             font-size: 1.125rem; /* Tamanho da fonte mobile (text-lg) */
             box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
-            z-index: 1; /* Para o span ficar por baixo */
+            z-index: 1;
         }
 
         /* Tamanho maior para desktop */
@@ -176,26 +172,24 @@
             }
         }
         
-        /* Span para o texto, para ficar por cima do feixe */
         .btn-shine span {
             position: relative;
             z-index: 2;
         }
 
-        /* Feixe de Luz (Animação contínua) */
         .btn-shine::before {
             content: '';
             position: absolute;
             top: -50%;
-            left: -100%; /* Começa fora, à esquerda */
-            width: 30px; /* Largura do feixe */
+            left: -100%;
+            width: 30px;
             height: 200%;
             background-color: rgba(255, 255, 255, 0.5);
             opacity: 0.7;
             transform: rotate(35deg);
-            z-index: 1; /* Abaixo do texto (span) */
+            z-index: 1;
             animation: shine-loop 3s infinite linear;
-            animation-delay: var(--delay, 0s); /* Delay aleatório opcional */
+            animation-delay: var(--delay, 0s);
         }
 
         @keyframes shine-loop {
@@ -218,7 +212,7 @@
         }
 
         .btn-shine:hover {
-            transform: scale(1.05); /* Efeito de zoom no hover */
+            transform: scale(1.05);
             box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2), 0 2px 5px rgba(0, 0, 0, 0.3);
         }
         /* --- Fim do Botão Prateado --- */
@@ -248,10 +242,10 @@
         <div class="relative z-10">
             
             <!-- Título com Cores Italianas (Corrigido para 2 linhas) -->
-            <h1 class="text-5xl md:text-7xl hero-title">
+            <h1 class="hero-title">
                 <span class="text-hero-green">GABRIEL</span>
             </h1>
-            <h2 class="text-5xl md:text-7xl hero-title">
+            <h2 class="hero-title">
                 <span class="text-hero-white">PELA</span> <span class="text-hero-red">EUROPA</span>
             </h2>
             
