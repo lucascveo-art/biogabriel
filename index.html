@@ -55,18 +55,26 @@
             margin-bottom: 1.5rem; /* mb-6 */
         }
 
-        /* Efeito de Empilhamento (Stacking) - Espaçamento aumentado para botões */
+        /* Efeito de Empilhamento (Stacking) - Atualizado para 5 cards */
         .sticky-card:nth-of-type(1) {
             top: 20px; 
             z-index: 1;
         }
         .sticky-card:nth-of-type(2) {
-            top: 40px; /* Aumentado */
+            top: 40px; 
             z-index: 2;
         }
         .sticky-card:nth-of-type(3) {
-            top: 60px; /* Aumentado */
+            top: 60px; 
             z-index: 3;
+        }
+        .sticky-card:nth-of-type(4) {
+            top: 80px; 
+            z-index: 4;
+        }
+        .sticky-card:nth-of-type(5) {
+            top: 100px; 
+            z-index: 5;
         }
         
         /* Animação de flutuar e brilhar (ícone check) */
@@ -84,19 +92,19 @@
           animation: float-glow 3s ease-in-out infinite;
         }
 
-        /* Animação de pulsar (ícone WhatsApp) */
-        @keyframes pulse-whatsapp {
+        /* Animação de pulsar (ícones dos Cards) */
+        @keyframes pulse-icon {
           0%, 100% {
             transform: scale(1);
             opacity: 1;
           }
           50% {
             transform: scale(1.1);
-            opacity: 0.8;
+            opacity: 0.9;
           }
         }
-        .animate-pulse-whatsapp {
-          animation: pulse-whatsapp 2s ease-in-out infinite;
+        .animate-pulse-icon {
+          animation: pulse-icon 2.5s ease-in-out infinite;
         }
 
         /* --- Estilos das Partículas --- */
@@ -166,7 +174,10 @@
         .btn-shine {
             position: relative;
             overflow: hidden;
-            display: inline-block;
+            display: inline-flex; /* Alterado para inline-flex para alinhar ícones */
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem; /* Espaço entre ícone e texto */
             background: linear-gradient(145deg, #e0e0e0, #c0c0c0);
             color: #1f2937;
             font-weight: 700; /* font-bold */
@@ -286,7 +297,7 @@
             <section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center" style="background-color: #008C45; border-color: #008C45;">
                 <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4"> <!-- Fundo do ícone semi-transparente -->
                     <!-- Ícone WhatsApp (Pulsante) -->
-                    <svg class="w-8 h-8 text-white animate-pulse-whatsapp" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="w-8 h-8 text-white animate-pulse-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.0007 2.00001C6.48671 2.00001 2.00071 6.48601 2.00071 12.0000C2.00071 14.286 2.72371 16.417 4.00071 18.106L2.30871 22.0000L6.22371 20.3150C7.88471 21.2460 9.85171 21.7860 12.0007 21.7860C17.5147 21.7860 22.0007 17.3000 22.0007 12.0000C22.0007 6.48601 17.5147 2.00001 12.0007 2.00001ZM16.5187 15.604C16.3237 15.932 15.1117 16.514 14.8697 16.611C14.6287 16.711 14.4337 16.758 14.2387 16.661C14.0437 16.564 13.4357 16.37 12.7237 16.177C12.0127 15.984 11.2347 15.758 10.5907 15.115C9.94671 14.471 9.49771 13.689 9.30271 13.361C9.10871 13.033 9.02071 12.870 9.21571 12.542C9.41071 12.214 9.69971 11.834 9.91471 11.564C10.1107 11.294 10.2977 11.144 10.4357 10.875C10.5727 10.606 10.5197 10.470 10.4437 10.325C10.3677 10.180 9.77371 9.62001 9.50471 9.06001C9.23571 8.50001 9.02071 8.58301 8.82571 8.58301C8.63071 8.58301 8.36171 8.51301 8.09271 8.51301C7.82371 8.51301 7.37471 8.58301 7.00571 8.94901C6.63671 9.31501 5.68871 10.231 5.68871 12.134C5.68871 14.037 7.04271 15.890 7.23771 16.084C7.43271 16.279 8.78671 18.277 10.6897 19.167C12.5927 20.057 14.2387 19.829 14.8697 19.732C15.5007 19.636 16.6577 18.913 16.8987 18.271C17.1397 17.629 17.1397 17.087 17.0427 16.904C16.9457 16.721 16.7197 16.272 16.5187 15.604Z" />
                     </svg>
                 </div>
@@ -308,8 +319,8 @@
             <!-- Card 2: YouTube (FUNDO VERMELHO) -->
             <section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center" style="background-color: #CD212A; border-color: #CD212A;">
                 <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4"> <!-- Fundo do ícone semi-transparente -->
-                    <!-- Ícone YouTube -->
-                    <svg class="w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <!-- Ícone YouTube (Pulsante) -->
+                    <svg class="w-8 h-8 text-white animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
                     </svg>
@@ -332,8 +343,8 @@
             <!-- Card 3: TikTok (FUNDO BRANCO) -->
             <section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center" style="background-color: #F4F5F0; border-color: #F4F5F0;">
                 <div class="w-16 h-16 bg-gray-900/10 rounded-full flex items-center justify-center mb-4"> <!-- Fundo do ícone escuro/transparente -->
-                    <!-- Ícone TikTok -->
-                    <svg class="w-8 h-8 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512">
+                    <!-- Ícone TikTok (Pulsante) -->
+                    <svg class="w-8 h-8 text-gray-900 animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512">
                         <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/>
                     </svg>
                 </div>
@@ -349,6 +360,68 @@
                 </p>
                 <a href="https://www.tiktok.com/@gabrielpelaeuropa" target="_blank" rel="noopener noreferrer" class="btn-shine" style="--delay: 0.4s;">
                     <span>Seguir Agora</span>
+                </a>
+            </section>
+
+            <!-- Card 4: Cidadania Italiana (FUNDO VERDE) -->
+            <section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center" style="background-color: #008C45; border-color: #008C45;">
+                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4"> <!-- Fundo do ícone semi-transparente -->
+                    <!-- Ícone Aperto de Mão (Pulsante) -->
+                    <svg class="w-8 h-8 text-white animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                    </svg>
+                </div>
+                
+                <img src="https://i.imgur.com/Sw3eOYp.png" 
+                     alt="Cidadania Italiana" 
+                     class="w-full h-auto rounded-lg mb-4 object-cover"
+                     onerror="this.src='https://placehold.co/776x530/1f2937/f3f4f6?text=Imagem+indisponível'">
+                
+                <h2 class="text-2xl md:text-3xl font-bold mb-3 text-white">A sua Cidadania Italiana</h2>
+                <p class="text-gray-200 mb-6 max-w-lg">
+                    Entre em contato com a empresa MINATTO COSTA - CIDADANIA ITALIANA
+                </p>
+                <!-- Container para os dois botões -->
+                <div class="flex flex-col sm:flex-row gap-4 mt-2">
+                    <!-- Botão 1: WhatsApp -->
+                    <a href="https://api.whatsapp.com/send/?phone=5548996609022&text=Oi%2C+Juliani%2C+eu+vim+pelo+Gabriel+pela+Europa%2C+queria+saber+sobre+a+Cidadania+Italiana.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="btn-shine" style="--delay: 0.6s;">
+                        <!-- Ícone WhatsApp (Pequeno) -->
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.0007 2.00001C6.48671 2.00001 2.00071 6.48601 2.00071 12.0000C2.00071 14.286 2.72371 16.417 4.00071 18.106L2.30871 22.0000L6.22371 20.3150C7.88471 21.2460 9.85171 21.7860 12.0007 21.7860C17.5147 21.7860 22.0007 17.3000 22.0007 12.0000C22.0007 6.48601 17.5147 2.00001 12.0007 2.00001ZM16.5187 15.604C16.3237 15.932 15.1117 16.514 14.8697 16.611C14.6287 16.711 14.4337 16.758 14.2387 16.661C14.0437 16.564 13.4357 16.37 12.7237 16.177C12.0127 15.984 11.2347 15.758 10.5907 15.115C9.94671 14.471 9.49771 13.689 9.30271 13.361C9.10871 13.033 9.02071 12.870 9.21571 12.542C9.41071 12.214 9.69971 11.834 9.91471 11.564C10.1107 11.294 10.2977 11.144 10.4357 10.875C10.5727 10.606 10.5197 10.470 10.4437 10.325C10.3677 10.180 9.77371 9.62001 9.50471 9.06001C9.23571 8.50001 9.02071 8.58301 8.82571 8.58301C8.63071 8.58301 8.36171 8.51301 8.09271 8.51301C7.82371 8.51301 7.37471 8.58301 7.00571 8.94901C6.63671 9.31501 5.68871 10.231 5.68871 12.134C5.68871 14.037 7.04271 15.890 7.23771 16.084C7.43271 16.279 8.78671 18.277 10.6897 19.167C12.5927 20.057 14.2387 19.829 14.8697 19.732C15.5007 19.636 16.6577 18.913 16.8987 18.271C17.1397 17.629 17.1397 17.087 17.0427 16.904C16.9457 16.721 16.7197 16.272 16.5187 15.604Z" />
+                        </svg>
+                        <span>Contato</span>
+                    </a>
+                    <!-- Botão 2: Instagram -->
+                    <a href="https://www.instagram.com/minattocostaassessoria_" target="_blank" rel="noopener noreferrer" class="btn-shine" style="--delay: 0.7s;">
+                        <!-- Ícone Instagram (Pulsante) -->
+                        <svg class="w-6 h-6 animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98C.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.28.058 1.688.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm7.846-10.405a1.441 1.441 0 11-2.882 0 1.441 1.441 0 012.882 0z"/>
+                        </svg>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- Card 5: Nutricionista (FUNDO VERMELHO) -->
+            <section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center" style="background-color: #CD212A; border-color: #CD212A;">
+                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4"> <!-- Fundo do ícone semi-transparente -->
+                    <!-- Ícone Nutrição (Pulsante) -->
+                    <svg class="w-8 h-8 text-white animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                    </svg>
+                </div>
+                
+                <img src="https://i.imgur.com/NKqQjI0.png" 
+                     alt="Nutricionista Brasileira" 
+                     class="w-full h-auto rounded-lg mb-4 object-cover"
+                     onerror="this.src='https://placehold.co/776x530/1f2937/f3f4f6?text=Imagem+indisponível'">
+                
+                <h2 class="text-2xl md:text-3xl font-bold mb-3 text-white">A sua Nutricionista Brasileira aqui na Itália</h2>
+                <p class="text-gray-200 mb-6 max-w-lg"> <!-- Texto um pouco mais claro para contraste com vermelho -->
+                    A vida na Itália não é só pasta. Encontre seu equilíbrio com uma nutricionista brasileira.
+                </p>
+                <a href="https://wa.me/393927069822?text=Oi%2C%20Caroline!%20Tudo%20bem%3F%20Eu%20vim%20pela%20indica%C3%A7%C3%A3o%20do%20Gabriel%20pela%20Europa.%20Queria%20saber%20mais%20sobre%20a%20sua%20consultoria%20nutricional%20e%20como%20funciona%20o%20seu%20acompanhamento" target="_blank" rel="noopener noreferrer" class="btn-shine" style="--delay: 0.8s;">
+                    <span>Entre em contato</span>
                 </a>
             </section>
 
