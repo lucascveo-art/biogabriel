@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabriel Pela Europa - Portale</title>
     
-    <!-- Carrega o Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carrega o Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Carrega a fonte Inter --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Carrega a fonte Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     
@@ -19,7 +21,7 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Animação Sombra Italiana (NOVO) */
+        /* Animação Sombra Italiana */
         @keyframes italian-shadow-glow {
           0%, 100% {
             box-shadow: 0 0 25px 8px rgba(0, 140, 69, 0.6); /* Verde */
@@ -257,29 +259,36 @@
 </head>
 <body class="antiasa">
 
-    <!-- Seção Hero (Cabeçalho) - Título movido para baixo --><header id="heroSection" class="relative h-screen flex flex-col justify-end items-center text-center p-4 pb-20 overflow-hidden">
+    <!-- Seção Hero (Cabeçalho) - Título movido para baixo -->
+    <header id="heroSection" class="relative h-screen flex flex-col justify-end items-center text-center p-4 pb-20 overflow-hidden">
         
-        <!-- Imagem de Fundo - Opacidade aumentada --><div class="absolute inset-0 z-0">
+        <!-- Imagem de Fundo - Opacidade aumentada -->
+        <div class="absolute inset-0 z-0">
             <img src="https://i.imgur.com/ka1tTeB.jpeg" 
                  alt="Gabriel Pela Europa Background"
                  class="w-full h-full object-cover opacity-50"
                  onerror="this.src='https://placehold.co/1920x1068/0a0a0a/34D399?text=Carregando+Imagem...'">
             
-            <!-- Overlay escuro para legibilidade --><div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent"></div>
+            <!-- Overlay escuro para legibilidade -->
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent"></div>
         </div>
         
-        <!-- Contêiner das Partículas --><div id="particle-container"></div>
+        <!-- Contêiner das Partículas -->
+        <div id="particle-container"></div>
 
-        <!-- Conteúdo do Cabeçalho - Título movido para baixo --><div class="relative z-10">
+        <!-- Conteúdo do Cabeçalho - Título movido para baixo -->
+        <div class="relative z-10">
             
-            <!-- Título com Cores Italianas (Corrigido para 2 linhas) --><h1 class="hero-title">
+            <!-- Título com Cores Italianas (Corrigido para 2 linhas) -->
+            <h1 class="hero-title">
                 <span class="text-hero-green">GABRIEL</span>
             </h1>
             <h2 class="hero-title">
                 <span class="text-hero-white">PELA</span> <span class="text-hero-red">EUROPA</span>
             </h2>
             
-            <!-- "Arraste para baixo" com ícone flutuante --><div class="mt-8 text-gray-300">
+            <!-- "Arraste para baixo" com ícone flutuante -->
+            <div class="mt-8 text-gray-300">
                 <div class="animate-float-glow inline-block">
                     <svg aria-hidden="true" class="w-5 h-5 mx-auto text-emerald-400" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>
                 </div>
@@ -288,14 +297,55 @@
         </div>
     </header>
 
-    <!-- Barra de Progresso Fixa --><div class="progress-container" style="top: 0px;">
+    <!-- Barra de Progresso Fixa -->
+    <div class="progress-container" style="top: 0px;">
         <div id="progressBar" class="progress-bar"></div>
     </div>
 
-    <!-- Conteúdo Principal (Cards) - ORDEM ALTERADA (Cidadania, Nutri, Divulgue, YT, TikTok) --><main id="scrollContainer" class="relative" style="padding-top: 16px;"> <!-- Padding para não colar na barra --><div class="container mx-auto px-4 max-w-3xl">
+    <!-- Conteúdo Principal (Cards) - ORDEM: Temu, Cidadania, Nutri, Divulgue, YT, TikTok -->
+    <main id="scrollContainer" class="relative" style="padding-top: 16px;"> <!-- Padding para não colar na barra -->
+        <div class="container mx-auto px-4 max-w-3xl">
+            
+            <!-- Card 1: Temu -->
+            <section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center">
+                <div class="relative z-10 w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mb-4"> 
+                    <svg class="w-8 h-8 text-gray-900 animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                    </svg>
+                </div>
+                
+                <img src="https://i.imgur.com/bA9jBlJ.png" 
+                     alt="Ofertas Temu" 
+                     class="relative z-10 w-full h-auto rounded-lg mb-4 object-cover"
+                     onerror="this.src='https://placehold.co/776x530/1f2937/f3f4f6?text=Imagem+indisponível'">
+                
+                <h2 class="relative z-10 text-2xl md:text-3xl font-bold mb-3 text-gray-900">Ofertas Exclusivas Temu</h2>
+                <p class="relative z-10 text-gray-700 mb-6 max-w-lg">
+                    Aproveite descontos incríveis e produtos exclusivos com a minha indicação.
+                </p>
+                <div class="relative z-10 flex flex-col sm:flex-row gap-4 mt-2">
+                    <a href="https://app.temu.com/k/ewnjlb723xx" target="_blank" rel="noopener noreferrer" class="btn-shine">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                        </svg>
+                        <span>Acessar Loja</span>
+                    </a>
+                    <!-- Botão 2: Instagram -->
+                    <a href="https://www.instagram.com/temu/" target="_blank" rel="noopener noreferrer" class="btn-shine" style="--delay: 0.1s;">
+                        <!-- Ícone Instagram (Pulsante) -->
+                        <svg class="w-6 h-6 animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98C.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.28.058 1.688.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm7.846-10.405a1.441 1.441 0 11-2.882 0 1.441 1.441 0 012.882 0z"/>
+                        </svg>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </section>
 
-            <!-- Card 1: Cidadania Italiana --><section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center">
-                <div class="relative z-10 w-16 h-16 bg-gray-900/10 rounded-full flex items-center justify-center mb-4"> <!-- Fundo do ícone semi-transparente --><!-- Ícone Aperto de Mão (Pulsante) --><svg class="w-8 h-8 text-gray-900 animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <!-- Card 2: Cidadania Italiana -->
+            <section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center">
+                <div class="relative z-10 w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mb-4"> 
+                    <!-- Ícone Aperto de Mão (Pulsante) -->
+                    <svg class="w-8 h-8 text-gray-900 animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                     </svg>
                 </div>
@@ -309,15 +359,15 @@
                 <p class="relative z-10 text-gray-700 mb-6 max-w-lg">
                     Entre em contato com a empresa MINATTO COSTA - CIDADANIA ITALIANA
                 </p>
-                <!-- Container para os dois botões --><div class="relative z-10 flex flex-col sm:flex-row gap-4 mt-2">
-                    <!-- Botão 1: WhatsApp --><a href="https://api.whatsapp.com/send/?phone=5548996609022&text=Oi%2C+Juliani%2C+eu+vim+pelo+Gabriel+pela+Europa%2C+queria+saber+sobre+a+Cidadania+Italiana.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="btn-shine" style="--delay: 0.1s;">
-                        <!-- Ícone WhatsApp (Pequeno) --><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <div class="relative z-10 flex flex-col sm:flex-row gap-4 mt-2">
+                    <a href="https://api.whatsapp.com/send/?phone=5548996609022&text=Oi%2C+Juliani%2C+eu+vim+pelo+Gabriel+pela+Europa%2C+queria+saber+sobre+a+Cidadania+Italiana.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="btn-shine" style="--delay: 0.1s;">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.0007 2.00001C6.48671 2.00001 2.00071 6.48601 2.00071 12.0000C2.00071 14.286 2.72371 16.417 4.00071 18.106L2.30871 22.0000L6.22371 20.3150C7.88471 21.2460 9.85171 21.7860 12.0007 21.7860C17.5147 21.7860 22.0007 17.3000 22.0007 12.0000C22.0007 6.48601 17.5147 2.00001 12.0007 2.00001ZM16.5187 15.604C16.3237 15.932 15.1117 16.514 14.8697 16.611C14.6287 16.711 14.4337 16.758 14.2387 16.661C14.0437 16.564 13.4357 16.37 12.7237 16.177C12.0127 15.984 11.2347 15.758 10.5907 15.115C9.94671 14.471 9.49771 13.689 9.30271 13.361C9.10871 13.033 9.02071 12.870 9.21571 12.542C9.41071 12.214 9.69971 11.834 9.91471 11.564C10.1107 11.294 10.2977 11.144 10.4357 10.875C10.5727 10.606 10.5197 10.470 10.4437 10.325C10.3677 10.180 9.77371 9.62001 9.50471 9.06001C9.23571 8.50001 9.02071 8.58301 8.82571 8.58301C8.63071 8.58301 8.36171 8.51301 8.09271 8.51301C7.82371 8.51301 7.37471 8.58301 7.00571 8.94901C6.63671 9.31501 5.68871 10.231 5.68871 12.134C5.68871 14.037 7.04271 15.890 7.23771 16.084C7.43271 16.279 8.78671 18.277 10.6897 19.167C12.5927 20.057 14.2387 19.829 14.8697 19.732C15.5007 19.636 16.6577 18.913 16.8987 18.271C17.1397 17.629 17.1397 17.087 17.0427 16.904C16.9457 16.721 16.7197 16.272 16.5187 15.604Z" />
                         </svg>
                         <span>Contato</span>
                     </a>
-                    <!-- Botão 2: Instagram --><a href="https://www.instagram.com/minattocostaassessoria_" target="_blank" rel="noopener noreferrer" class="btn-shine" style="--delay: 0.2s;">
-                        <!-- Ícone Instagram (Pulsante) --><svg class="w-6 h-6 animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                    <a href="https://www.instagram.com/minattocostaassessoria_" target="_blank" rel="noopener noreferrer" class="btn-shine" style="--delay: 0.2s;">
+                        <svg class="w-6 h-6 animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98C.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.28.058 1.688.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm7.846-10.405a1.441 1.441 0 11-2.882 0 1.441 1.441 0 012.882 0z"/>
                         </svg>
                         <span>Instagram</span>
@@ -325,8 +375,10 @@
                 </div>
             </section>
             
-            <!-- Card 2: Nutricionista --><section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center">
-                <div class="relative z-10 w-16 h-16 bg-gray-900/10 rounded-full flex items-center justify-center mb-4"> <!-- Fundo do ícone semi-transparente --><!-- Ícone Nutrição (Pulsante) --><svg class="w-8 h-8 text-gray-900 animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <!-- Card 3: Nutricionista -->
+            <section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center">
+                <div class="relative z-10 w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mb-4"> 
+                    <svg class="w-8 h-8 text-gray-900 animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
                     </svg>
                 </div>
@@ -340,15 +392,15 @@
                 <p class="relative z-10 text-gray-700 mb-6 max-w-lg">
                     A vida na Itália não é só pasta. Encontre seu equilíbrio com uma nutricionista brasileira.
                 </p>
-                <!-- Container para os dois botões --><div class="relative z-10 flex flex-col sm:flex-row gap-4 mt-2">
-                    <!-- Botão 1: WhatsApp --><a href="https://wa.me/393927069822?text=Oi%2C%20Caroline!%20Tudo%20bem%3F%20Eu%20vim%20pela%20indica%C3%A7%C3%A3o%20do%20Gabriel%20pela%20Europa.%20Queria%20saber%20mais%20sobre%20a%20sua%20consultoria%20nutricional%20e%20como%20funciona%20o%20seu%20acompanhamento" target="_blank" rel="noopener noreferrer" class="btn-shine" style="--delay: 0.3s;">
-                        <!-- Ícone WhatsApp (Pequeno) --><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <div class="relative z-10 flex flex-col sm:flex-row gap-4 mt-2">
+                    <a href="https://wa.me/393927069822?text=Oi%2C%20Caroline!%20Tudo%20bem%3F%20Eu%20vim%20pela%20indica%C3%A7%C3%A3o%20do%20Gabriel%20pela%20Europa.%20Queria%20saber%20mais%20sobre%20a%20sua%20consultoria%20nutricional%20e%20como%20funciona%20o%20seu%20acompanhamento" target="_blank" rel="noopener noreferrer" class="btn-shine" style="--delay: 0.3s;">
+                        <svg class="w-6 h-6 animate-pulse-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.0007 2.00001C6.48671 2.00001 2.00071 6.48601 2.00071 12.0000C2.00071 14.286 2.72371 16.417 4.00071 18.106L2.30871 22.0000L6.22371 20.3150C7.88471 21.2460 9.85171 21.7860 12.0007 21.7860C17.5147 21.7860 22.0007 17.3000 22.0007 12.0000C22.0007 6.48601 17.5147 2.00001 12.0007 2.00001ZM16.5187 15.604C16.3237 15.932 15.1117 16.514 14.8697 16.611C14.6287 16.711 14.4337 16.758 14.2387 16.661C14.0437 16.564 13.4357 16.37 12.7237 16.177C12.0127 15.984 11.2347 15.758 10.5907 15.115C9.94671 14.471 9.49771 13.689 9.30271 13.361C9.10871 13.033 9.02071 12.870 9.21571 12.542C9.41071 12.214 9.69971 11.834 9.91471 11.564C10.1107 11.294 10.2977 11.144 10.4357 10.875C10.5727 10.606 10.5197 10.470 10.4437 10.325C10.3677 10.180 9.77371 9.62001 9.50471 9.06001C9.23571 8.50001 9.02071 8.58301 8.82571 8.58301C8.63071 8.58301 8.36171 8.51301 8.09271 8.51301C7.82371 8.51301 7.37471 8.58301 7.00571 8.94901C6.63671 9.31501 5.68871 10.231 5.68871 12.134C5.68871 14.037 7.04271 15.890 7.23771 16.084C7.43271 16.279 8.78671 18.277 10.6897 19.167C12.5927 20.057 14.2387 19.829 14.8697 19.732C15.5007 19.636 16.6577 18.913 16.8987 18.271C17.1397 17.629 17.1397 17.087 17.0427 16.904C16.9457 16.721 16.7197 16.272 16.5187 15.604Z" />
                         </svg>
                         <span>Contato</span>
                     </a>
-                    <!-- Botão 2: Instagram --><a href="https://www.instagram.com/carolinerosario.nutri?igsh=ZmVmdzAyajB3bXdp" target="_blank" rel="noopener noreferrer" class="btn-shine" style="--delay: 0.4s;">
-                        <!-- Ícone Instagram (Pulsante) --><svg class="w-6 h-6 animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                    <a href="https://www.instagram.com/carolinerosario.nutri?igsh=ZmVmdzAyajB3bXdp" target="_blank" rel="noopener noreferrer" class="btn-shine" style="--delay: 0.4s;">
+                        <svg class="w-6 h-6 animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98C.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.28.058 1.688.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm7.846-10.405a1.441 1.441 0 11-2.882 0 1.441 1.441 0 012.882 0z"/>
                         </svg>
                         <span>Instagram</span>
@@ -356,8 +408,10 @@
                 </div>
             </section>
 
-            <!-- Card 3: Divulgue Sua Empresa --><section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center">
-                <div class="relative z-10 w-16 h-16 bg-gray-900/10 rounded-full flex items-center justify-center mb-4"> <!-- Fundo do ícone semi-transparente --><!-- Ícone WhatsApp (Pulsante) --><svg class="w-8 h-8 text-gray-900 animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+            <!-- Card 4: Divulgue Sua Empresa -->
+            <section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center">
+                <div class="relative z-10 w-16 h-16 bg-gray-900/10 rounded-full flex items-center justify-center mb-4"> 
+                    <svg class="w-8 h-8 text-gray-900 animate-pulse-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.0007 2.00001C6.48671 2.00001 2.00071 6.48601 2.00071 12.0000C2.00071 14.286 2.72371 16.417 4.00071 18.106L2.30871 22.0000L6.22371 20.3150C7.88471 21.2460 9.85171 21.7860 12.0007 21.7860C17.5147 21.7860 22.0007 17.3000 22.0007 12.0000C22.0007 6.48601 17.5147 2.00001 12.0007 2.00001ZM16.5187 15.604C16.3237 15.932 15.1117 16.514 14.8697 16.611C14.6287 16.711 14.4337 16.758 14.2387 16.661C14.0437 16.564 13.4357 16.37 12.7237 16.177C12.0127 15.984 11.2347 15.758 10.5907 15.115C9.94671 14.471 9.49771 13.689 9.30271 13.361C9.10871 13.033 9.02071 12.870 9.21571 12.542C9.41071 12.214 9.69971 11.834 9.91471 11.564C10.1107 11.294 10.2977 11.144 10.4357 10.875C10.5727 10.606 10.5197 10.470 10.4437 10.325C10.3677 10.180 9.77371 9.62001 9.50471 9.06001C9.23571 8.50001 9.02071 8.58301 8.82571 8.58301C8.63071 8.58301 8.36171 8.51301 8.09271 8.51301C7.82371 8.51301 7.37471 8.58301 7.00571 8.94901C6.63671 9.31501 5.68871 10.231 5.68871 12.134C5.68871 14.037 7.04271 15.890 7.23771 16.084C7.43271 16.279 8.78671 18.277 10.6897 19.167C12.5927 20.057 14.2387 19.829 14.8697 19.732C15.5007 19.636 16.6577 18.913 16.8987 18.271C17.1397 17.629 17.1397 17.087 17.0427 16.904C16.9457 16.721 16.7197 16.272 16.5187 15.604Z" />
                     </svg>
                 </div>
@@ -368,15 +422,18 @@
                      onerror="this.src='https://placehold.co/776x530/1f2937/f3f4f6?text=Imagem+indisponível'">
                 
                 <h2 class="relative z-10 text-2xl md:text-3xl font-bold mb-3 text-gray-900">Divulgue Sua Empresa Comigo</h2>
-                <p class="relative z-10 text-gray-700 mb-6 max-w-lg"> <!-- Texto ATUALIZADO -->Alcance milhares de clientes para o seu negócio, que acompanham a minha vida na Itália. A sua marca pode ser a próxima estrela do meu conteúdo.
+                <p class="relative z-10 text-gray-700 mb-6 max-w-lg">
+                    Alcance milhares de clientes para o seu negócio, que acompanham a minha vida na Itália. A sua marca pode ser a próxima estrela do meu conteúdo.
                 </p>
-                <a href="https://wa.me/393280662771?text=Ol%C3%A1%20Gabriel%2C%20vim%20pelo%20Instagram.%20Tenho%20uma%20empresa%20e%20busco%20seus%20servi%C3%A7os%20de%20divulga%C3%A7%C3%A3o%2C%20podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" class="relative z-10 btn-shine" style="--delay: 0.5s;">
+                <a href="https://gpedivulgacoes.pages.dev/" target="_blank" rel="noopener noreferrer" class="relative z-10 btn-shine" style="--delay: 0.5s;">
                     <span>Saiba Mais</span>
                 </a>
             </section>
 
-            <!-- Card 4: YouTube --><section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center">
-                <div class="relative z-10 w-16 h-16 bg-gray-900/10 rounded-full flex items-center justify-center mb-4"> <!-- Fundo do ícone semi-transparente --><!-- Ícone YouTube (Pulsante) --><svg class="w-8 h-8 text-gray-900 animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <!-- Card 5: YouTube -->
+            <section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center">
+                <div class="relative z-10 w-16 h-16 bg-gray-900/10 rounded-full flex items-center justify-center mb-4"> 
+                    <svg class="w-8 h-8 text-gray-900 animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
                     </svg>
@@ -396,8 +453,10 @@
                 </a>
             </section>
             
-            <!-- Card 5: TikTok --><section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center">
-                <div class="relative z-10 w-16 h-16 bg-gray-900/10 rounded-full flex items-center justify-center mb-4"> <!-- Fundo do ícone semi-transparente --><!-- Ícone TikTok (Pulsante) --><svg class="w-8 h-8 text-gray-900 animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512">
+            <!-- Card 6: TikTok -->
+            <section class="sticky-card p-6 md:p-10 flex flex-col justify-center items-center text-center">
+                <div class="relative z-10 w-16 h-16 bg-gray-900/10 rounded-full flex items-center justify-center mb-4"> 
+                    <svg class="w-8 h-8 text-gray-900 animate-pulse-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512">
                         <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/>
                     </svg>
                 </div>
@@ -408,7 +467,8 @@
                      onerror="this.src='https://placehold.co/776x530/1f2937/f3f4f6?text=Imagem+indisponível'">
                 
                 <h2 class="relative z-10 text-2xl md:text-3xl font-bold mb-3 text-gray-900">Meu TikTok</h2>
-                <p class="relative z-10 text-gray-700 mb-6 max-w-lg"> <!-- Texto ATUALIZADO -->Vídeos curtos, momentos imperdíveis e dicas rápidas para quem sonha em morar fora.
+                <p class="relative z-10 text-gray-700 mb-6 max-w-lg">
+                    Vídeos curtos, momentos imperdíveis e dicas rápidas para quem sonha em morar fora.
                 </p>
                 <a href="https://www.tiktok.com/@gabrielpelaeuropa" target="_blank" rel="noopener noreferrer" class="relative z-10 btn-shine" style="--delay: 0.7s;">
                     <span>Seguir Agora</span>
@@ -418,7 +478,8 @@
         </div>
     </main>
 
-    <!-- Rodapé --><footer class="py-12 mt-16 text-center text-gray-500">
+    <!-- Rodapé -->
+    <footer class="py-12 mt-16 text-center text-gray-500">
         <p>&copy; 2025 Gabriel Pela Europa. Todos os direitos reservados.</p>
     </footer>
 
